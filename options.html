@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cobalt Downloader Chrome Extension</title>
+</head>
+<body>
+  <h1>Options</h1>
+  
+  <label for="vCodec">Video Codec:</label>
+  <select id="vCodec">
+    <option value="h264">h264</option>
+    <option value="av1">av1</option>
+    <option value="vp9">vp9</option>
+  </select>
+  <br><br>
+  
+  <label for="vQuality">Video Quality:</label>
+  <select id="vQuality">
+    <option value="144">144</option>
+    <option value="240">240</option>
+    <option value="360">360</option>
+    <option value="480">480</option>
+    <option value="720">720</option>
+    <option value="1080">1080</option>
+    <option value="1440">1440</option>
+    <option value="2160">2160</option>
+    <option value="max">max</option>
+  </select>
+  <br><br>
+
+  <label for="aFormat">Audio Format:</label>
+  <select id="aFormat">
+    <option value="best">best</option>
+    <option value="mp3">mp3</option>
+    <option value="ogg">ogg</option>
+    <option value="wav">wav</option>
+    <option value="opus">opus</option>
+  </select>
+  <br><br>
+
+  <label for="filenamePattern">Filename Pattern:</label>
+  <select id="filenamePattern">
+    <option value="classic">classic</option>
+    <option value="pretty">pretty</option>
+    <option value="basic">basic</option>
+    <option value="nerdy">nerdy</option>
+  </select>
+  <br><br>
+
+  <label>
+    <input type="checkbox" id="isAudioOnly" />
+    Audio Only
+  </label>
+  <br><br>
+  
+  <label>
+    <input type="checkbox" id="isTTFullAudio" />
+    TT Full Audio
+  </label>
+  <br><br>
+  
+  <label>
+    <input type="checkbox" id="isAudioMuted" />
+    Mute Audio
+  </label>
+  <br><br>
+  
+  <label>
+    <input type="checkbox" id="dubLang" />
+    Use Accept-Language Header
+  </label>
+  <br><br>
+  
+  <label>
+    <input type="checkbox" id="disableMetadata" />
+    Disable Metadata
+  </label>
+  <br><br>
+  
+  <label>
+    <input type="checkbox" id="twitterGif" />
+    Convert Twitter Gifs to .gif
+  </label>
+  <br><br>
+  
+  <label>
+    <input type="checkbox" id="tiktokH265" />
+    Prefer 1080p h265 for TikTok
+  </label>
+  <br><br>
+  
+  <div id="status"></div>
+  <button id="save">Save</button>
+  
+  <script src="options.js"></script>
+</body>
+</html>

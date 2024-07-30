@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Cobalt Downloader",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "options_page": "options.html",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "icon.png"
+    }
+  }
