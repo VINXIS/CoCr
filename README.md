@@ -1,9 +1,10 @@
 # cobalt.tools As A Chrome Extension
 A one button chrome extension that allows you to quickly download files via the [cobalt.tools](https://cobalt.tools) site/API.
+[Link to cobalt.tools repo](https://github.com/imputnet/cobalt)
 
 *I am not affiliated with Cobalt.tools in any way, this is just a project I made for myself and my friends to download files faster.*
 
-## Installation
+## Manual Installation
 1. Download this repository as a zip file from the green Code button -> Download as ZIP.
 2. Unzip the file.
 3. Open Chrome and go to `chrome://extensions/`.
