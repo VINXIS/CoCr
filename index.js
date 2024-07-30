@@ -19,8 +19,7 @@ async function run() {
         twitterGif: false,
         tiktokH265: false,
     });
-    
-    console.log("optoins", options);
+
     const currTabs = await chrome.tabs.query({ active: true, currentWindow: true });
     const url = currTabs[0].url;
     
