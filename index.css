@@ -3,5 +3,18 @@ body {
     width: 300px;
     font-family: "Noto Sans Mono", "Consolas", "SF Mono", monospace;
     background-color: black;
+    accent-color: black;
     color: white;
+}
+
+select, button {
+    font-family: inherit;
+    background-color: black;
+    color: white;
+    border: 0;
+}
+
+button {
+    cursor: pointer;
+    margin-bottom: 10px;
 }

@@ -21,7 +21,7 @@ const saveOptions = () => {
 		setTimeout(() =>
 		{
 			status.textContent = '';
-		}, 750);
+		}, 1000);
 	});
 };
 
@@ -56,5 +56,7 @@ const restoreOptions = () => {
 	});
 };
 
-document.addEventListener('DOMContentLoaded', restoreOptions);
-document.getElementById('save').addEventListener('click', saveOptions);
+document.addEventListener('DOMContentLoaded', () => {
+	restoreOptions();
+	document.getElementById('save').addEventListener('click', saveOptions);
+});
