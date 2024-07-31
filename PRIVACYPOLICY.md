@@ -1,4 +1,4 @@
-This extension stores **only** your settings to send to [cobalt.tools](cobalt.tools). This data is stored locally on your machine and is not sent to any other party aside from [cobalt.tools](cobalt.tools).
+This extension stores **only** your settings specifically for the extension to send to [cobalt.tools](cobalt.tools) when making a request. This data is stored locally on your machine and is not sent to any other party aside from [cobalt.tools](cobalt.tools).
 
 The code for [cobalt.tools](cobalt.tools) is also open source, and their repository can be found [here](https://github.com/imputnet/cobalt).
 
