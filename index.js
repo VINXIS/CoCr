@@ -21,10 +21,12 @@ async function run(isAudioOnlyOverride = false) {
     });
 
     if (isAudioOnlyOverride)
-        options.isAudioOnly = true;
+        options.isAudioOnly = !options.isAudioOnly;
     
     const currTabs = await chrome.tabs.query({ active: true, currentWindow: true });
     const url = currTabs[0].url;
+
+    document.body.innerHTML = `Loading with ${options.isAudioOnly ? 'audio only' : 'video'}...<br>URL: ${url}`
 
     const data = await fetch(`${baseURL}/json`, {
         method: "POST",
@@ -77,13 +79,13 @@ async function run(isAudioOnlyOverride = false) {
             switch (data.pickerType) {
                 case "images":
                     for (let i in data.picker) {
-                        document.body.innerHTML += `<a href="${text.arr[i]["url"]}" target="_blank"><img src="${text.arr[i]["url"]}" onerror="this.parentNode.style.display='none'"></a>`;
+                        document.body.innerHTML += `<a href="${data.picker[i]["url"]}" target="_blank"><img src="${data.picker[i]["url"]}" onerror="this.parentNode.style.display='none'"></a>`;
                     }
                     document.body.innerHTML += `<a href=${data.audio} target="_blank">Download Audio</a>`;
                     break;
                 default:
                     for (let i in data.picker) {
-                        document.body.innerHTML += `<a href="${text.arr[i]["url"]}" target="_blank"><div>${text.arr[i].type}</div>${text.arr[i].type === 'photo' ? '' : '<div></div>'}<img src="${text.arr[i]["thumb"]}" onerror="this.style.display='none'"></a>`;
+                        document.body.innerHTML += `<a href="${data.picker[i]["url"]}" target="_blank"><div>${data.picker[i].type}</div>${data.picker[i].type === 'photo' ? `<img src="${data.picker[i]["thumb"]}" onerror="this.style.display='none'">` : ''}</a>`;
                     }
                     break;
             }
@@ -98,5 +100,5 @@ async function run(isAudioOnlyOverride = false) {
 
 document.addEventListener("DOMContentLoaded", async () => {
     const queryParams = new URLSearchParams(window.location.search);
-    run(queryParams.get('audioOnly') === 'true')
+    run(queryParams.get('audioOnly') === 'change')
 });
