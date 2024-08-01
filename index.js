@@ -5,7 +5,7 @@ function errorPost(text) {
     document.body.innerHTML = text;
 }
 
-async function run() {
+async function run(isAudioOnlyOverride = false) {
     const options = await chrome.storage.sync.get({
         vCodec: 'h264',
         vQuality: '720',
@@ -20,9 +20,12 @@ async function run() {
         tiktokH265: false,
     });
 
+    if (isAudioOnlyOverride)
+        options.isAudioOnly = true;
+    
     const currTabs = await chrome.tabs.query({ active: true, currentWindow: true });
     const url = currTabs[0].url;
-    
+
     const data = await fetch(`${baseURL}/json`, {
         method: "POST",
         headers: {
@@ -93,4 +96,7 @@ async function run() {
     } 
 }
 
-document.addEventListener("DOMContentLoaded", run);
+document.addEventListener("DOMContentLoaded", async () => {
+    const queryParams = new URLSearchParams(window.location.search);
+    run(queryParams.get('audioOnly') === 'true')
+});
