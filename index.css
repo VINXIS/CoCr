@@ -1,4 +1,5 @@
 body {
+    min-width: 200px;
     font-family: "Noto Sans Mono", "Consolas", "SF Mono", monospace;
     background-color: black;
     accent-color: black;
